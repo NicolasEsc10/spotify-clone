@@ -1,0 +1,28 @@
+---
+import PlayListItemCard from "@components/main/PlayListItemCard.astro";
+import Layout from "../layouts/Layout.astro";
+import { playlists } from "@lib/data";
+import { MainSlider } from "@/src/components/main/MainSlider";
+---
+
+<Layout title="Clone Spotify">
+  <div id="playlists-container" class="relative">
+    <div class="relative z-10 px-6 pt-10">
+      <div class="flex flex-col gap-4">
+        <MainSlider client:only="react" title="Tus favoritos">
+          {playlists
+            .filter((playlist) => playlist.albumId === 7)
+            .map((playlist) => <PlayListItemCard playlist={playlist} />)}
+        </MainSlider>
+        <MainSlider client:only="react" title="Playlists Lo-Fi">
+          {playlists
+            .filter((playlist) => playlist.albumId >= 1 && playlist.albumId <= 6)
+            .map((playlist) => <PlayListItemCard playlist={playlist} />)}
+        </MainSlider>
+        <MainSlider client:only="react" title="Escuchados recientemente">
+          {playlists.map((playlist) => <PlayListItemCard playlist={playlist} />)}
+        </MainSlider>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,48 @@
+---
+import type { Playlist } from "@lib/data";
+import { PlayButton } from "./PlayButton";
+import { VolumeCard } from "@icons/Icons";
+
+interface Props {
+  playlist: Playlist;
+}
+
+const { playlist } = Astro.props;
+const { id, cover, title, artists } = playlist;
+
+const artistsString = artists.join(", ");
+---
+
+<a
+  href={`/playlist/${id}`}
+  class="playlist-item flex relative p-2 mx-2 items-center gap-3 overflow-hidden hover:bg-[#1F1F1F] rounded-md group"
+>
+  <div class="relative w-12 h-12">
+    <picture class="rounded-md">
+      <img src={cover} alt={title} class="w-12 h-12 object-cover rounded-md" />
+    </picture>
+
+    <div
+      class="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-md"
+    >
+    </div>
+
+    <div
+      class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    >
+      <PlayButton id={id} className="w-4 h-4 fill-white" client:only="react" />
+    </div>
+  </div>
+
+  <div class="flex flex-col flex-auto truncate">
+    <div class="flex items-center gap-2">
+      <h4 class="text-base truncate text-white">{title}</h4>
+    </div>
+    <span class="text-xs truncate text-tertiary">{artistsString}</span>
+  </div>
+  <VolumeCard
+    className="w-4 h-4 fill-green-500 mr-2"
+    client:only="react"
+    id={id}
+  />
+</a>

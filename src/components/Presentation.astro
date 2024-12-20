@@ -1,0 +1,101 @@
+---
+import GithubIcon from "@icons/Github.astro";
+import LinkedinIcon from "@icons/Linkedin.astro";
+---
+
+<div
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-fade-in"
+  id="presentation"
+>
+  <div class="bg-zinc-900 p-8 rounded-lg max-w-md mx-20 animate-slide-in">
+    <div class="flex flex-col gap-4">
+      <div class="flex items-center justify-center">
+        <img src="https://avatars.githubusercontent.com/u/113264514?v=4" alt="Clone Spotify" class="w-16 h-16 rounded-full" />
+      </div>
+
+      <div class="text-center">
+        <h1 class="text-3xl font-bold mb-2">¡Hola! Soy Nicolas</h1>
+        <p class="text-zinc-400">
+          Este es un clon de Spotify desarrollado como proyecto personal para
+          demostrar mis habilidades de desarrollo web.
+        </p>
+      </div>
+
+      <div class="space-y-2">
+        <h2 class="text-xl font-bold">Tecnologías utilizadas:</h2>
+        <ul class="list-disc list-inside text-zinc-400">
+          <li>Astro</li>
+          <li>React</li>
+          <li>Tailwind CSS</li>
+          <li>TypeScript</li>
+          <li>Zustand</li>
+        </ul>
+      </div>
+
+      <div class="space-y-2">
+        <h2 class="text-xl font-bold">Mis redes:</h2>
+        <div class="flex gap-4 justify-center">
+          <a
+            href="https://github.com/NicolasEsc10"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-white rounded-full hover:bg-white/70 transition-colors"
+          >
+            <div class="p-2 flex items-center gap-2">
+              <GithubIcon />
+              <p class="text-black font-bold">NicolasEsc10</p>
+            </div>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/nicolas-esc10/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-blue-500 rounded-full hover:bg-blue-600 transition-colors"
+          >
+            <div class="p-2 flex items-center gap-2">
+              <LinkedinIcon />
+              <p class="text-white font-bold">Nicolas Escobar</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <button
+        class="bg-green-500 text-black font-bold py-2 px-4 rounded-full hover:scale-105 transition"
+        onclick="document.getElementById('presentation').remove()"
+      >
+        ¡Entendido!
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

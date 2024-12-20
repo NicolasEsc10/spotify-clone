@@ -1,0 +1,17 @@
+---
+import SideMenuLibrary from "./SideMenuLibrary.astro";
+import SideMenuPlayLists from "./SideMenuPlayLists.astro";
+---
+
+<aside class="[grid-area:aside] flex-col flex overflow-y-auto">
+  <nav class="flex flex-col flex-1 gap-2">
+    <div class="bg-primary rounded-lg flex flex-col h-full">
+      <div class="p-2">
+        <SideMenuLibrary />
+      </div>
+      <div class="flex-1">
+        <SideMenuPlayLists />
+      </div>
+    </div>
+  </nav>
+</aside>

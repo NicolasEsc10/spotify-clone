@@ -1,0 +1,121 @@
+---
+import AsideMenu from "@components/sidebar/AsideMenu.astro";
+import ClientRouter from "astro/components/ClientRouter.astro";
+import { Player } from "@components/player/Player.jsx";
+import Header from "@components/header/Header.astro";
+import Presentation from "@components/Presentation.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ClientRouter fallback="none"/>
+	</head>
+	<body>
+		<div id="app" class="relative h-screen p-2 gap-2 overflow-hidden">
+			<Header />
+			<AsideMenu />
+			<main class="[grid-area:main] rounded-lg bg-primary overflow-y-auto h-full">
+				<slot />
+			</main>
+			<Player client:load transition:name="media-player" transition:persist />
+			<Presentation />
+		</div>
+	</body>
+</html>
+
+<style is:global>
+	::-webkit-scrollbar {
+		width: 12px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: hsla(0, 0%, 100%, .3);
+		border: 3px solid transparent;
+		border-radius: 6px;
+		background-clip: padding-box;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: hsla(0, 0%, 100%, .4);
+		border: 3px solid transparent;
+		border-radius: 6px;
+		background-clip: padding-box;
+	}
+
+	::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #000;
+		font-family: "CircularStd", system-ui, sans-serif;
+		color: #fff;
+	}
+
+	@font-face {
+        font-family: "CircularStd";
+        src: url("/fonts/CircularStd-Medium.woff2") format("woff2");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
+	@font-face {
+		font-family: "CircularStd";
+		src: url("/fonts/CircularStd-Book.woff2") format("woff2");
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+	font-family: "CircularStd";
+		src: url("/fonts/CircularStd-Light.woff2") format("woff2");
+		font-weight: 300;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "CircularStd";
+		src: url("/fonts/CircularStd-Bold.woff2") format("woff2");
+		font-weight: 700;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "CircularStd";
+		src: url("/fonts/CircularStd-Black.woff2") format("woff2");
+		font-weight: 900;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	#app {
+		display: grid;
+		grid-template-areas: 
+		"header header header"
+		"aside main main"
+		"player player player";
+		grid-template-columns: 350px 1fr;
+		grid-template-rows: auto 1fr auto;
+	}
+
+</style>
