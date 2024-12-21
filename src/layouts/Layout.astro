@@ -3,7 +3,6 @@ import AsideMenu from "@components/sidebar/AsideMenu.astro";
 import ClientRouter from "astro/components/ClientRouter.astro";
 import { Player } from "@components/player/Player.jsx";
 import Header from "@components/header/Header.astro";
-import Presentation from "@components/Presentation.astro";
 
 interface Props {
   title: string;
@@ -30,7 +29,6 @@ const { title } = Astro.props;
 				<slot />
 			</main>
 			<Player client:load transition:name="media-player" transition:persist />
-			<Presentation />
 		</div>
 	</body>
 </html>
