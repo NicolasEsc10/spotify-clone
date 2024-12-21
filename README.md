@@ -1,48 +1,61 @@
-# Astro Starter Kit: Basics
+# 🎵 Spotify Clone
 
-```sh
-npm create astro@latest -- --template basics
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/d8327248-32b3-4bfe-a844-4eaa264586b3" style="margin-bottom: 20px;"/>
+  <br/>
+  <img src="https://github.com/user-attachments/assets/d1547998-307b-45d9-bd74-469a47fa6c87" />
+</div>
+
+
+## 📋 Descripción
+
+Este proyecto es un clon de Spotify desarrollado con Astro, que replica las principales funcionalidades y la interfaz de usuario de Spotify. Construido con tecnologías modernas para ofrecer una experiencia fluida y responsive.
+
+## ⚡ Características
+
+- 🎨 Interfaz de usuario moderna y responsive
+- 🎵 Reproductor de música funcional
+- 🚀 Rendimiento optimizado
+- 🎯 Navegación intuitiva
+
+## 🛠️ Tecnologías Utilizadas
+
+- [Astro](https://astro.build/) - Framework web
+- HTML5 & CSS3
+- JavaScript
+- TypeScript
+- Tailwind CSS
+
+## 🚀 Instalación
+
+1. Clona el repositorio
+```bash
+git clone https://github.com/NicolasEsc10/spotify-clone
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+2. Instala las dependencias
+```bash
+npm install
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+3. Inicia el servidor de desarrollo
+```bash
+npm run dev
+```
 
-## 🧞 Commands
+## 🔧 Comandos Disponibles
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
+| Comando                   | Acción                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `npm install`             | Instala las dependencias                         |
+| `npm run dev`             | Inicia servidor local en `localhost:4321`        |
+| `npm run build`           | Construye el sitio para producción              |
+| `npm run preview`         | Previsualiza la build localmente                |
 
-## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 👤 Autor
+
+- GitHub: [@NicolasEsc10](https://github.com/NicolasEsc10)
+
+---
+⭐️ Si te ha gustado este proyecto, ¡no dudes en darle una estrella!
