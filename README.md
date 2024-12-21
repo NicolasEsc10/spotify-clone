@@ -1,5 +1,8 @@
 # 🎵 Spotify Clone
 
+<br/>
+<br/>
+
 <div align="center">
   <img src="https://github.com/user-attachments/assets/d8327248-32b3-4bfe-a844-4eaa264586b3" style="margin-bottom: 20px;"/>
   <br/>
